@@ -1,33 +1,41 @@
-#pragma once
+п»ї#pragma once
+#include <iostream>
+
+
 /**
-* @brief Класс Квадрат.
+* @brief РљР»Р°СЃСЃ РљРІР°РґСЂР°С‚.
 */
 class Square
 {
 private:
 	/**
-	* @brief Сторона.
+	* @brief РЎС‚РѕСЂРѕРЅР°.
 	*/
 	double side;
 public:
 	/**
-	* @brief Рассчитывает периметр.
-	* @return периметр.
+	* @brief Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ РїРµСЂРёРјРµС‚СЂ.
+	* @return РїРµСЂРёРјРµС‚СЂ.
 	*/
-	double GetPerimetr();
+	double GetPerimetr() const;
 	/**
-	* @brief Рассчитывает площадь.
-	* @return площадь.
+	* @brief Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ РїР»РѕС‰Р°РґСЊ.
+	* @return РїР»РѕС‰Р°РґСЊ.
 	*/
-	double GetArea();
+	double GetArea() const;
 	/**
-	* @brief Рассчитывает диагональ.
-	* @return диагональ.
+	* @brief Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ РґРёР°РіРѕРЅР°Р»СЊ.
+	* @return РґРёР°РіРѕРЅР°Р»СЊ.
 	*/
-	double GetDiagonal();
+	double GetDiagonal() const;
 	/**
-	* @brief Инициализирует новый обект класса Square.
-	* @param side Сторона.
+	* @brief РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РЅРѕРІС‹Р№ РѕР±РµРєС‚ РєР»Р°СЃСЃР° Square.
+	* @param side РЎС‚РѕСЂРѕРЅР°.
 	*/
-	Square(const double side);
+	explicit Square(const double side);
+
+	std::string ToString() const;
+
+	friend std::ostream& operator<<(std::ostream& out, Square square);
+
 };
