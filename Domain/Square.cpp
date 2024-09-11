@@ -2,43 +2,46 @@
 #include <sstream>
 
 #include "Square.h"
-
-double Square::GetPerimetr() const
+namespace square
 {
-	return 4 * this->side;
-}
 
-double Square::GetArea() const
-{
-	return this->side * this->side;
-}
-
-double Square::GetDiagonal() const
-{
-	return this->side * sqrt(2);
-}
-
-Square::Square(const double side)
-{
-	if (side <= 0)
+	double Square::GetPerimetr() const
 	{
-		throw std::out_of_range("Сторона не может быть отрицательной!");
+		return 4 * this->side;
 	}
 
-	this->side = side;
-}
+	double Square::GetArea() const
+	{
+		return this->side * this->side;
+	}
 
-std::string Square::ToString() const
-{
-	
-	std::stringstream buffer{};
-	buffer << "Сторона квадрата - " << this->side << "\n";
-	return buffer.str();
-	
-}
+	double Square::GetDiagonal() const
+	{
+		return this->side * sqrt(2);
+	}
 
-std::ostream& operator<<(std::ostream& out, Square square)
-{
-	
-	return out << square.ToString();
+	Square::Square(const double side)
+	{
+		if (side <= 0)
+		{
+			throw std::out_of_range("Сторона не может быть отрицательной!");
+		}
+
+		this->side = side;
+	}
+
+	std::string Square::ToString() const
+	{
+
+		std::stringstream buffer{};
+		buffer << "Сторона квадрата - " << this->side << "\n";
+		return buffer.str();
+
+	}
+
+	std::ostream& operator<<(std::ostream& out, const Square& square)
+	{
+		return out << square.ToString();
+	}
+
 }
