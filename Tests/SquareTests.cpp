@@ -39,5 +39,20 @@ namespace Tests
 			// Assert
 			Assert::AreEqual(expected, actual);
 		}
+
+		TEST_METHOD(OperatorLeftShift_ValidData_Success)
+		{
+			// Arrange
+			Square square{ 2 };
+			const std::string expected = "Сторона квадрата - 2";
+			std::stringstream buffer{};
+
+			//Act
+			buffer << square;
+			auto actual = buffer.str();
+
+			// Assert
+			Assert::AreEqual(expected, actual);
+		}
 	};
 }
