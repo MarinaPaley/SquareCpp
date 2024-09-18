@@ -12,7 +12,7 @@ namespace Tests
 		
 		TEST_METHOD(Ctor_NegativeSide_ExpectedException)
 		{
-			Assert::IsTrue(1 == 1);
+			Assert::ExpectException<std::out_of_range>([]() {auto x = new Square(0);} );
 		}
 
 		TEST_METHOD(GetPerimetr_ValidData_Success)
@@ -25,6 +25,19 @@ namespace Tests
 			const auto actual = square.GetPerimetr();
 			//Assert
 			Assert::IsTrue(std::abs(expected - actual) <= epsilon);
+		}
+
+		TEST_METHOD(ToString_ValidData_Success)
+		{
+			// Arrange
+			Square square{ 2 };
+			const std::string expected = "Сторона квадрата - 2";
+
+			// Act
+			auto actual = square.ToString();
+
+			// Assert
+			Assert::AreEqual(expected, actual);
 		}
 	};
 }

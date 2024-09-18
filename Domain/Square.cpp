@@ -34,7 +34,7 @@ namespace square
 	{
 
 		std::stringstream buffer{};
-		buffer << "Сторона квадрата - " << this->side << "\n";
+		buffer << "Сторона квадрата - " << this->side;
 		return buffer.str();
 
 	}

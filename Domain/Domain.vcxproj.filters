@@ -18,9 +18,6 @@
     <ClInclude Include="Square.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="f.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Square.cpp">
